@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import iconEmpresa from './img/iconEmpresaLine2.png'
 import "./header.css"
 
 function Header() {
@@ -20,12 +21,12 @@ function Header() {
   }
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
+    <Navbar expand="lg" className="">
+      <Container fluid className='contenedor_nav'>
         <Navbar.Brand href="#">
           <img
-            style={{width:"150px", height:"70px"}} 
-            src="https://mlopezabogados.com.pe/wp-content/uploads/2025/02/cropped-logo-m_Capa-1-scaled-1.jpg" 
+            style={{width:"150px", height:"50px"}} 
+            src={iconEmpresa}
             alt="Logo de HTML5" 
           />
         </Navbar.Brand>

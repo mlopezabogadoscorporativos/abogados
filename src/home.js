@@ -14,6 +14,7 @@ import React, { useState, useEffect } from "react";
 import './home.css';
 import { getServisios } from './rotes_Api/servicios';
 import FormCorreoServices from './form_corre_send/formcorreosend';
+import { getEquipos } from './rotes_Api/equipo';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function CardService(props) {
@@ -62,11 +63,16 @@ const groupByPars = (array = [], pars = 2 ) => {
 function Home() {
 
   const [width, setWidth] = useState(window.innerWidth);
+  // Servicios--------------------------------------------
   const [dataServicios, setDataServicios] = useState([
     {id: 8, icon: "bi bi-percent", title: "Ejecución de garantías",descripccionBrev: ""},
   ]);
   const [dataServiciosGroup, setdataServiciosGroup] = useState({0:[],1:[]});
-
+  // Equipos----------------------------------------------
+  const [dataEquipos, setDataEquipos] = useState([
+    {id: 5, nombre: "ALEJANDRA GARCÍA", cargo:"abogado" ,urlImage: "https://res.cloudinary.com/dhxefh3r2/image/upload/v1746217976/pswws5me9psnzzxbb1ja.jpg"},
+  ]);
+  const [dataEquiposGroup, setdataEquiposGroup] = useState({0:[],1:[]});
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -78,6 +84,13 @@ function Home() {
       const data = getServisios();
       setDataServicios(data);
       setdataServiciosGroup(groupByPars(data, 2));
+      return () => {}
+  }, []);
+
+  useEffect(() => {
+      const data = getEquipos();
+      setDataEquipos(data);
+      setdataEquiposGroup(groupByPars(data, 4));
       return () => {}
   }, []);
 
@@ -227,155 +240,58 @@ function Home() {
             <div className='diseno_conteinerFlotant_person'></div>
             {(width > 720)?<Carousel className='upbutton' id=''>
                 {/* .................................................................... */}
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparent}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="ALEJANDRA GARCÍA" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746218202/norv2hvjmxlbubywvf8y.jpg"
-                            />
-                            <div style={{width: "40px"}}></div>
-                            <CardPersonal 
-                                nombre="ALEJANDRA GARCÍA" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746126518/mdivlwg7kw387hoc0xwg.jpg"
-                            />
-                            <div style={{width: "40px"}}></div>
-                            <CardPersonal 
-                                nombre="GRACIELA CASTRO" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746126813/nspc14xlzplebcmhodkx.jpg"
-                            />
-                            <div style={{width: "40px"}}></div>
-                            <CardPersonal 
-                                nombre="GRACIELA CASTRO" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746217575/vw4hb1t3318n4wy8jv3x.jpg"
-                            />
-                            <div style={{width: "40px"}}></div>
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparent}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="GRACIELA CASTRO" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746217976/pswws5me9psnzzxbb1ja.jpg"
-                            />
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
+                {Object.keys(dataEquiposGroup).map((item)=>{
+                    return (
+                      <Carousel.Item>
+                          {/* <div className='boxShadow'></div> */}
+                          <img
+                              className="d-block w-100"
+                              src={trasparent}
+                              alt="Image One"
+                              style={{objectFit:"cover"}}
+                          />
+                          <Carousel.Caption className='box'>
+                              <div className='contenedor_subIten_carrousel_person'>
+                                  {dataEquiposGroup[item].map((itemCard,ind)=>{
+                                      return (<>
+                                        <CardPersonal
+                                            nombre={itemCard.nombre} 
+                                            cargo={itemCard.cargo} 
+                                            urlImage={itemCard.urlImage}
+                                        />
+                                        {(ind == (dataEquiposGroup[item].length - 1))?<></>:<div style={{width: "40px"}}></div>}
+                                      </>);
+                                  })}
+                              </div>
+                          </Carousel.Caption>
+                      </Carousel.Item>
+                    );
+                })}
                 {/* .................................................................... */}
-            </Carousel>:<Carousel className='upbutton' id=''>
+                </Carousel>:<Carousel className='upbutton' id=''>
                 {/* .................................................................... */}
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparentH}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="ALEJANDRA GARCÍA" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746218202/norv2hvjmxlbubywvf8y.jpg"
-                            />
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparentH}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="ALEJANDRA GARCÍA" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746126518/mdivlwg7kw387hoc0xwg.jpg"
-                            />
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparentH}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="GRACIELA CASTRO" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746126813/nspc14xlzplebcmhodkx.jpg"
-                            />
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparentH}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="GRACIELA CASTRO" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746217575/vw4hb1t3318n4wy8jv3x.jpg"
-                            />
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                {/* .................................................................... */}
-                <Carousel.Item>
-                {/* <div className='boxShadow'></div> */}
-                <img
-                    className="d-block w-100"
-                    src={trasparentH}
-                    alt="Image One"
-                    style={{objectFit:"cover"}}
-                />
-                    <Carousel.Caption className='box'>
-                        <div className='contenedor_subIten_carrousel_person'>
-                            <CardPersonal 
-                                nombre="GRACIELA CASTRO" 
-                                cargo="Abogado"
-                                urlImage="https://res.cloudinary.com/dhxefh3r2/image/upload/v1746217976/pswws5me9psnzzxbb1ja.jpg"
-                            />
-                        </div>
-                    </Carousel.Caption>
-                </Carousel.Item>
+                {dataEquipos.map((item)=>{
+                    return (
+                      <Carousel.Item>
+                      {/* <div className='boxShadow'></div> */}
+                      <img
+                          className="d-block w-100"
+                          src={trasparentH}
+                          alt="Image One"
+                          style={{objectFit:"cover"}}
+                      />
+                          <Carousel.Caption className='box'>
+                              <div className='contenedor_subIten_carrousel_person'>
+                                  <CardPersonal 
+                                     nombre={item.nombre}
+                                     cargo={item.cargo}
+                                     urlImage={item.urlImage}
+                                  />
+                              </div>
+                          </Carousel.Caption>
+                      </Carousel.Item>
+                    );
+                })};
                 {/* .................................................................... */}
             </Carousel>}
           </div>

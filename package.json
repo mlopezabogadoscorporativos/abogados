@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "'": "file:awesome.me/kit-KIT_CODE@latest'",
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
