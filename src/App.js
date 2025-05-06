@@ -1,0 +1,30 @@
+import './App.css';
+import Contactos from './contactanos';
+import Footer from './footer';
+import Header from './header';
+import Home from './home';
+import Equipo from './equipo';
+import { RouterDesconocido } from './routerdesconocido/routerdesconocido';
+import Servicios from './servicios';
+// import ExampleCarouselImage from 'components/ExampleCarouselImage';
+
+function App(props) {
+
+  const listCotenedor = [
+    <Home></Home>,
+    <Equipo></Equipo>,
+    <Servicios></Servicios>,
+    <Contactos></Contactos>
+  ]
+
+  return (
+      <>
+        <Header></Header>
+          {listCotenedor[props.idcontec]}
+          {/* <RouterDesconocido /> */}
+        <Footer></Footer>
+      </>
+  );
+}
+
+export default App;

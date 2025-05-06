@@ -1,0 +1,31 @@
+:root {
+    --color-primary-empresarial: #303F9F;
+    --color-secundary-empresarial: #5C6BC0;
+}
+
+.navbar-collapse{
+    justify-content: end !important;
+    flex-grow: 0 !important;
+}
+
+.navitemusert_drop > a {
+    color: var(--color-secundary-empresarial) !important;
+}
+
+.navitemusert_drop > div {
+    background-color: var(--color-secundary-empresarial) !important;
+}
+
+.navitemusert_drop > div > a {
+    background-color: var(--color-secundary-empresarial) !important;
+    color: white !important;
+}
+
+.navitemusert_drop > div > a:hover {
+    background-color: var(--color-secundary-empresarial) !important;
+    color: white !important;
+}
+
+.navitemusert{
+    color: var(--color-secundary-empresarial) !important;
+}

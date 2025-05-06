@@ -1,0 +1,410 @@
+.boxShadow{
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.box {
+  /* z-index: 999; */
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  border-radius: 5px;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 1;
+  
+  max-width: 100%;
+  height: 100%;
+  /* max-width: 50%;
+  max-height: 50%; */
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_containerConten{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  /* background-color: red; */
+}
+
+.home_containerConten_C{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  /* background-color: red; */
+}
+
+.rediraction{
+  flex-direction: row;
+}
+
+.home_contenido_centrado{
+  display: flex;
+  height: 80%;
+  width: 90%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.home_contenido_centrado_images{
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  /* background-color: green; */
+}
+
+.home_contenido_centrado_images_img{
+  width: 80%;
+  height: 80%;
+  background-image: url("https://mlopezabogados.com.pe/wp-content/uploads/2025/02/PORTADA-WEB-MLOPEZ.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  margin: 20px;
+}
+
+.home_contenido_centrado_infoButton{
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  /* background-color: aqua; */
+  padding-left: 10px;
+}
+
+/* .home_contenido_centrado_infoButton > h3{
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.2;
+  color: #37373F;
+  margin-top: 0;
+} */
+
+.contenido_text{
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #757575;
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.subTitle{
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #37373F;
+}
+
+.titleExtense{
+  font-weight: 700 !important;
+  margin-bottom: 1.5rem !important;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.2;
+  color: #37373F;
+  margin-top: 0;
+}
+
+.home_containerConten_video{
+  display: flex;
+  height: 80%;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_carrousel_info_container{
+  display: flex;
+  height: 80%;
+  width: 30%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  /* background-color: red; */
+  padding-left: 30px;
+
+}
+
+.home_carrousel_container{
+  display: flex;
+  height: 80%;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.contenedorCarrouselimage{
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.contenedor_subIten_carrousel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  width: 600px;
+  height: 500px;
+  margin-top: 10px;
+}
+
+.contenedor_subIten_carrousel:nth-child(-n + 3){
+  margin-right: 10px;
+}
+
+.contenedor_item_cardboard{
+  width: 220px;
+  height: 200px;
+  display: flex;
+  padding-top: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.contenedor_item_cardboard:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.contenedor_item_cardboard_image{
+  width: 100px;
+  height: 100px;
+  background-color: #37373F !important;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.contenedor_item_cardboard > h6{
+  text-align: center;
+  max-width: 80%;
+}
+
+.diseno_conteinerFlotant{
+  width: 600px;
+  height: 150px;
+  background-color: #B49C73 !important;
+  position: absolute;
+  margin-bottom: 20%;
+  border-radius: 15px;
+}
+
+.home_carrousel_info_container_person{
+  display: flex;
+  /* height: 10%; */
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  padding-left: 30px;
+  /* background-color: blueviolet; */
+}
+
+.home_carrousel_container_person{
+  display: flex;
+  height: 80%;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+  /* background-color: aqua; */
+}
+
+.diseno_conteinerFlotant_person{
+  width: 90%;
+  height: 150px;
+  background-color: #B49C73 !important;
+  position: absolute;
+  margin-bottom: 20%;
+  border-radius: 15px;
+}
+
+.contenedor_item_cardboard_person{
+  width: 220px;
+  height: 70%;
+  display: flex;
+  margin-top: 100px;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  overflow: hidden;
+}
+
+
+.contenedor_title_person{
+  width: 100%;
+  height: 25%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor_title_person > h5{
+  margin-bottom: 0;
+  /* background-color: aqua; */
+}
+
+.contenedor_title_person > .contenido_text{
+  margin-top: 0px;
+  margin-bottom: 0;
+}
+
+.image_person_card{
+  width: 100%;
+  height: 85%;
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("./img/team-1.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contenedor_subIten_carrousel_person{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  width: 130%;
+  height: 500px;
+  margin-top: 10px;
+  /* background-color: #B49C73; */
+}
+
+.upbutton >.carousel-control-next,
+.upbutton > .carousel-control-prev{
+  height: 20px !important;
+  opacity: 1 !important;
+  top: 50%;
+  width: 5%;
+}
+
+.upbutton > .carousel-control-next > .carousel-control-next-icon,
+.upbutton > .carousel-control-prev > .carousel-control-prev-icon{
+  height: 32px !important;
+  width: 32px !important;
+  background-color: #37373F !important;
+  border-radius: 10px;
+}
+
+.home_form_image_degrade{
+  width: 80%;
+  height: 90%;
+  background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url("./img/carousel-1.jpg"), no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.home_form_container_mail{
+  width: 40%;
+  height: 90%;
+  background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home_form_container_mail > h3{
+  color: #fff !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 700 !important;
+  /* font-size: calc(1.375rem + 1.5vw); */
+}
+
+.boton_envio_email{
+  width: 100% !important;
+  background-color: #B49C73 !important;
+  border-color: #B49C73 !important;
+}
+
+
+@media (max-width: 767px) {
+  /* Estilos para pantallas pequeñas (móviles) */
+  .home_contenido_centrado{
+    flex-direction: column;
+  }
+
+  .home_contenido_centrado_images{
+    width: 80%;
+  }
+
+  .home_contenido_centrado_infoButton{
+    width: 80%;
+  }
+
+  .rediraction{
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .home_carrousel_info_container{
+    width: 90%;
+  }
+
+  .home_carrousel_container{
+    width: 90%;
+  }
+
+  .home_form_container_mail{
+    width: 100%;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Estilos para pantallas medianas (tablets) */
+}

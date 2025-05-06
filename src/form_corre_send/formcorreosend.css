@@ -1,0 +1,47 @@
+.formCorreosend_containerConten_C{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    /* background-color: red; */
+}
+
+.formCorreosend_form_image_degrade{
+    width: 80%;
+    height: 90%;
+    background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url("../img/carousel-1.jpg"), no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.formCorreosend_form_container_mail{
+    width: 40%;
+    height: 90%;
+    background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+.formCorreosend_form_container_mail > h3{
+    color: #fff !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 767px) {
+    .formCorreosend_containerConten_C{
+        margin-bottom: 20px;
+    }
+
+    .formCorreosend_form_container_mail{
+        width: 100%;
+    }
+}
