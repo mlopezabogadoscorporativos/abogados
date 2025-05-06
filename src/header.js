@@ -21,7 +21,7 @@ function Header() {
   }
 
   return (
-    <Navbar expand="lg" className="">
+    <Navbar expand="lg" className='contenedor_nav'>
       <Container fluid className='contenedor_nav'>
         <Navbar.Brand href="#">
           <img
