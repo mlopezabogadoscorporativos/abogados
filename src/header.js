@@ -6,26 +6,48 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import iconEmpresa from './img/iconEmpresaLine2.png'
 import "./header.css"
+import { useSEO } from './hooks/useSEO';
+import { useEffect, useState } from 'react';
+import { Seo_list } from './hooks/seolistroutes';
 
 function Header() {
 
+  const [position, setPosition] = useState(0);
   const listUrl = [
     "/home",
-    "/equipo",
+    "/nuestraempresa",
     "/servicios",
     "/contacto"
   ];
 
+  useEffect(()=>{
+    console.log(window.location.origin)
+    // se captura el patch de la url : (http://)origin/(patch)
+    const urlPathech = window.location.href.replace(window.location.origin, "").split("/")
+    // substrae todos los patch de la url
+    const patch = urlPathech[urlPathech.length - 1]
+    // substrae el item de la url
+    const index = listUrl.reduce((acumul,itemAux,ind) =>{
+      acumul = (itemAux.indexOf(patch) > -1)? ind : acumul
+      return acumul
+    }, [0])
+    setPosition(index)
+  },[position])
+
+  useSEO(Seo_list[position]);
+
   const redireccion = (position) => {
     window.location.href = window.location.origin + listUrl[position];
+    setPosition(position);
   }
 
   return (
     <Navbar expand="lg" className='contenedor_nav'>
-      <Container fluid className='contenedor_nav'>
+      <Container fluid className='contenedor_nav_center'>
         <Navbar.Brand href="#">
           <img
-            style={{width:"150px", height:"50px"}} 
+            className='iconContainerAccionImage'
+            // style={{}} 
             src={iconEmpresa}
             alt="Logo de HTML5" 
           />
@@ -41,7 +63,7 @@ function Header() {
             navbarScroll
           >
             <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(0)}}>Inicio</Nav.Link>
-            <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(1)}}>Equipo</Nav.Link>
+            <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(1)}}>Nuetra Empresa</Nav.Link>
             <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(2)}}>Servicios</Nav.Link>
             <NavDropdown className='navitemusert_drop' title="Novedades" id="navbarScrollingDropdown">
               {/* <NavDropdown.Item href="">Action</NavDropdown.Item> */}

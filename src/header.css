@@ -4,7 +4,25 @@
 }
 
 .contenedor_nav{
+    height: 120px !important;
     background-color: var(--color-primary-empresarial) !important;
+}
+
+.contenedor_nav_center{
+    position: relative;
+    justify-content: center !important;
+}
+
+.iconContainerAccionImage{
+    width: 250px; 
+    height: 95px;
+}
+
+.contenedor_nav_center > a{
+    position: absolute;
+    margin-top: -45px;
+    left: 0;
+    top: 0;
 }
 
 .navbar-collapse{
@@ -36,3 +54,26 @@
     /* color: var(--color-secundary-empresarial) !important; */
     color: white !important;
 }
+
+@media (max-width: 767px) {
+    /* Estilos para pantallas pequeñas (móviles) */
+
+    .contenedor_nav{
+        height: auto !important;
+    }
+    
+    .contenedor_nav_center > a{
+        position: relative;
+        margin-top: 0;
+    }
+
+    .contenedor_nav_center{
+        justify-content: space-between !important;
+    }
+
+    .iconContainerAccionImage{
+        width: 150px;
+        height: 50px;
+    }
+}
+  

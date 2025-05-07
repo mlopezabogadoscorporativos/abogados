@@ -31,6 +31,13 @@
     justify-content: center;
     align-items: center;
   }
+
+  .home_presentation_image{
+    width: 100%;
+    height: calc(100vh - 120px);
+    background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url("./img/carousel-1.jpg"), no-repeat center center;
+    background-size: cover;
+  }
   
   .home_containerConten{
     display: flex;
@@ -39,6 +46,39 @@
     width: 100%;
     height: 500px;
     /* background-color: red; */
+  }
+
+  .home_presentation_title{
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 48px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .home_presentation_subtitle{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6em;
+    color: white;
+    margin: 0 auto 30px auto;
+  }
+
+  .home_presentation_button{
+    background-color: var(--color-primary-empresarial) !important;
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+  }
+
+  .home_presentation_button:hover{
+    background-color: white !important;
+    color: var(--color-primary-empresarial) !important;
   }
   
   .home_containerConten_C{
@@ -380,12 +420,6 @@
     margin-bottom: 1.5rem !important;
     font-weight: 700 !important;
   } */
-  
-  .boton_envio_email{
-    width: 100% !important;
-    background-color: var(--color-primary-empresarial) !important;
-    border-color: var(--color-primary-empresarial) !important;
-  }
 
   .responsive_iframe_home_container{
     width: 90%;

@@ -50,7 +50,7 @@ function ModalAction(props) {
             {/*  */}
             <div className='servicio_container_modal_header'>
                 <Modal.Title className='servicio_container_modal_header_title' >{dataServicioModal.title}</Modal.Title>
-                <div className='presio_servicio_modal'>S/. {dataServicioModal.presio}</div>
+                {/* <div className='presio_servicio_modal'>S/. {dataServicioModal.presio}</div> */}
             </div>
           </Modal.Header>
           <Modal.Body>{dataServicioModal.descripccionBrev}</Modal.Body>

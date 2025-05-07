@@ -11,7 +11,36 @@
     /* background-color: red; */
 }
 
-.equipo_subcontainerConten_mvo{
+.equipo_containerConten_max{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(rgba(55, 55, 63, 0.7), rgba(55, 55, 63, 0.7)), url("./img/carousel-1.jpg"), no-repeat center center;
+    background-size: cover;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    /* background-color: red; */
+}
+
+.equipo_action_opcion{
+    color: var(--color-primary-empresarial) !important;
+}
+
+.equipo_action_opcion.nav-link.active{
+    color: white !important;
+    background-color: var(--color-primary-empresarial) !important;
+}
+
+.equipo_info_justificado{
+    text-align: justify !important;
+    background-color: #F5F5F5 !important;
+    padding: 15px 15px 15px 15px;
+    border-radius: 15px;
+}
+
+.equipo_subcontainerConten_mvo {
     width: 100%;
     height: 100%;
     /* background-color: red; */
@@ -47,29 +76,29 @@
 }
 
 .equipo_subcontainerConten_mvo_container_inform{
-    position: relative;
-    width: 45%;
+    /* position: relative; */
+    width: 80%;
     height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    /* background-color: red; */
 }
 
 .equipo_subcontainerConten_mvo_subcontainer_inform{
-    position: absolute;
-    width: 120%;
-    height: 90%;
+    /* position: absolute; */
+    width: 90%;
+    height: auto;
     justify-content: center;
     align-items: center;
     background-color: white;
     border-radius: 20px;
-    margin-left: -10%;
+    /* margin-left: -10%; */
     padding: 50px 50px 50px 50px;
 }
 
 .equipo_container_mvo_item{
-    width: 80%;
+    width: 90%;
     height: auto;
     display: flex;
     justify-content: start;
@@ -109,7 +138,7 @@
 }
 
 .equipo_container_mvo_item_container_texto{
-    width: calc(90% - 50px);
+    width: calc(100% - 50px);
     height: auto;
     margin-left: 10px;
 }
@@ -227,11 +256,17 @@
         display: none;
     }
 
-    .equipo_container_phone{
-        height: 600px !important;
+    .equipo_containerConten_max{
+        height: auto !important;
     }
 
+    /* .equipo_container_phone{
+        height: 100vh !important;
+    } */
+
     .equipo_subcontainerConten_mvo{
+        height: 100%;
+        /* background-color: red; */
         flex-direction: column;
     }
 
@@ -242,13 +277,14 @@
     }
 
     .equipo_subcontainerConten_mvo_container_inform {
-        width: 100%;
+        width: 90%;
         height: 50%;
     }
 
     .equipo_subcontainerConten_mvo_subcontainer_inform{
         width: 100%;
-        margin-left: 0px;
+        padding: 30px 20px 30px 20px;
+        /* margin-left: 0px; */
     }
 
     .equipo_container_mvo_item{

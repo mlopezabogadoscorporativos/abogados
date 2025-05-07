@@ -98,35 +98,26 @@ function Home() {
   return (
       <>
         {/* Carrousel Informativo */}
-        {/* <Carousel>
+        <Carousel>
           <Carousel.Item>
-            <div className='boxShadow'></div>
-            <img
-              className="d-block w-100"
-              src={car1}
-              alt="Image One"
-              style={{objectFit:"cover"}}
-            />
-            
+            {/* <div className='boxShadow'></div> */}
+            <div className='home_presentation_image'></div>
             <Carousel.Caption className='box'>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3 className='home_presentation_title'>Bienvenidos a nuestra empresa MLOPEZ ABOGADOS</h3>
+              <p className='home_presentation_subtitle'>Con 10 años de trayectoria orintada a lograr satisfacer al cliente.</p>
+              <a className='home_presentation_button' href='#servicios'>Nuestros Servicios</a>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-          <div className='boxShadow'></div>
-            <img
-              className="d-block w-100"
-              src={car2}
-              alt="Image One"
-              style={{objectFit:"cover"}}
-            />
+            {/* <div className='boxShadow'></div> */}
+            <div className='home_presentation_image'></div>
             <Carousel.Caption className='box'>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3 className='home_presentation_title'>Consulta con nuestros colaboradores</h3>
+              <p className='home_presentation_subtitle'>Contamos con profecionales, altamente capacitados en distintas ramas de las leyes.</p>
+              <a className='home_presentation_button' href='#conocenos'>Conocenos</a>
             </Carousel.Caption>
           </Carousel.Item>
-        </Carousel> */}
+        </Carousel>
         {/* informacion de la empresa */}
         <div className='home_containerConten phonehomeredimencion'>
           <div className='home_contenido_centrado'> 
@@ -146,7 +137,7 @@ function Home() {
           </div>
         </div>
         {/* Video de presentacion */}
-        <div className='home_containerConten'>
+        <section className='home_containerConten'>
           <div className='home_containerConten_video'>
             <h5 className='subTitle' style={{color: "white"}}>Nuestras Empresa</h5>
             <h3 className='titleExtense' style={{color: "white"}}>Conocenos un poco mas</h3>
@@ -160,9 +151,9 @@ function Home() {
               allowfullscreen>
             </iframe>
           </div>
-        </div>
+        </section>
         {/* Informacion de los servicios */}
-        <div className='home_containerConten rediraction'>
+        <section id='servicios' className='home_containerConten rediraction'>
           <div className='home_carrousel_info_container'>
               <h5 className='subTitle'>Nuestros Servicios</h5>
               <h3 className='titleExtense'>Nuestras áreas de práctica</h3>
@@ -229,9 +220,9 @@ function Home() {
               {/* ------------------------------------------------------------------------------------ */}
             </Carousel>}
           </div>
-        </div>
+        </section>
         {/* informacion del personal de la empresa */}
-        <div className='home_containerConten_C'>
+        <section id='conocenos' className='home_containerConten_C'>
           <div className='home_carrousel_info_container_person'>
               <h5 className='subTitle'>Nuestros abogados</h5>
               <h3 className='titleExtense'>Conozca a nuestros abogados</h3>
@@ -295,7 +286,7 @@ function Home() {
                 {/* .................................................................... */}
             </Carousel>}
           </div>
-        </div>
+        </section>
         <div style={{height: "40px"}}></div>
         {/* contactarse con la empresa */}
         <FormCorreoServices />

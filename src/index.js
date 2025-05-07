@@ -15,7 +15,7 @@ root.render(
       <Routes>
           <Route path="" exact element={(<App idcontec={0} />)}/>
           <Route path="/home" exact element={(<App idcontec={0} />)}/>
-          <Route path="/equipo" exact element={(<App idcontec={1} />)}/>
+          <Route path="/nuestraempresa" exact element={(<App idcontec={1} />)}/>
           <Route path="/servicios" exact element={(<App idcontec={2} />)}/>
           <Route path="/contacto" exact element={(<App idcontec={3} />)}/>
       </Routes>

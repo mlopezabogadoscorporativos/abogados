@@ -7,6 +7,7 @@ import Home from './home';
 import Equipo from './equipo';
 import { RouterDesconocido } from './routerdesconocido/routerdesconocido';
 import Servicios from './servicios';
+// import { useSEO } from './hooks/useSEO';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function App(props) {

@@ -48,7 +48,7 @@ function FormCorreoServices(props) {
                 <div className='formCorreosend_form_image_degrade'>
                     <div className='formCorreosend_form_container_mail'>
                         <h3>
-                            Obtenga una cita
+                            Agende su cita
                         </h3>
                         <Container>
                             <Form ref={form} onSubmit={enviarFormulario}>

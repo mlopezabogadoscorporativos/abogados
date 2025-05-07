@@ -84,15 +84,14 @@
     margin-left: 10px;
 }
 
-.contact_container_form{
+/* .contact_container_form{
     width: 40%;
     height: 90%;
-    /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .contact_container_iframe{
     width: 40%;

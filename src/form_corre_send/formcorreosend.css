@@ -19,6 +19,12 @@
     border-radius: 10px;
 }
 
+.boton_envio_email{
+    width: 100% !important;
+    background-color: var(--color-primary-empresarial) !important;
+    border-color: var(--color-primary-empresarial) !important;
+}
+
 .formCorreosend_form_container_mail{
     width: 40%;
     height: 90%;
