@@ -103,8 +103,8 @@ function Home() {
             {/* <div className='boxShadow'></div> */}
             <div className='home_presentation_image'></div>
             <Carousel.Caption className='box'>
-              <h3 className='home_presentation_title'>Bienvenidos a nuestra empresa MLOPEZ ABOGADOS</h3>
-              <p className='home_presentation_subtitle'>Con 10 años de trayectoria orintada a lograr satisfacer al cliente.</p>
+              <h3 className='home_presentation_title'>Bienvenidos a nuestra empresa MLOPEZ ABOGADOS sac</h3>
+              <p className='home_presentation_subtitle'>Con 10 años de trayectoria, orintada a lograr satisfacer la nesecidad del cliente.</p>
               <a className='home_presentation_button' href='#servicios'>Nuestros Servicios</a>
             </Carousel.Caption>
           </Carousel.Item>
@@ -112,7 +112,7 @@ function Home() {
             {/* <div className='boxShadow'></div> */}
             <div className='home_presentation_image'></div>
             <Carousel.Caption className='box'>
-              <h3 className='home_presentation_title'>Consulta con nuestros colaboradores</h3>
+              <h3 className='home_presentation_title'>Consulta con nuestro staff de abogados</h3>
               <p className='home_presentation_subtitle'>Contamos con profecionales, altamente capacitados en distintas ramas de las leyes.</p>
               <a className='home_presentation_button' href='#conocenos'>Conocenos</a>
             </Carousel.Caption>
@@ -155,8 +155,8 @@ function Home() {
         {/* Informacion de los servicios */}
         <section id='servicios' className='home_containerConten rediraction'>
           <div className='home_carrousel_info_container'>
-              <h5 className='subTitle'>Nuestros Servicios</h5>
-              <h3 className='titleExtense'>Nuestras áreas de práctica</h3>
+              {/* <h5 className='subTitle'>Nuestros Servicios</h5> */}
+              <h3 className='titleExtense'>Nuestros Servicios</h3>
               <h6 className='contenido_text' style={{maxWidth: "90%"}}>
                 Brindamos asesoramiento integral en el desarrollo de habilitaciones urbanas.
                 Aseguramos que cada proyecto cumpla con la normativa vigente.
@@ -224,8 +224,8 @@ function Home() {
         {/* informacion del personal de la empresa */}
         <section id='conocenos' className='home_containerConten_C'>
           <div className='home_carrousel_info_container_person'>
-              <h5 className='subTitle'>Nuestros abogados</h5>
-              <h3 className='titleExtense'>Conozca a nuestros abogados</h3>
+              {/* <h5 className='subTitle'>Nuestros abogados</h5> */}
+              <h3 className='titleExtense'>Nuestros abogados</h3>
           </div>
           <div className='home_carrousel_container_person'>
             <div className='diseno_conteinerFlotant_person'></div>

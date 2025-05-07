@@ -63,7 +63,7 @@ function Header() {
             navbarScroll
           >
             <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(0)}}>Inicio</Nav.Link>
-            <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(1)}}>Nuetra Empresa</Nav.Link>
+            <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(1)}}>Nuestra Empresa</Nav.Link>
             <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(2)}}>Servicios</Nav.Link>
             <NavDropdown className='navitemusert_drop' title="Novedades" id="navbarScrollingDropdown">
               {/* <NavDropdown.Item href="">Action</NavDropdown.Item> */}
