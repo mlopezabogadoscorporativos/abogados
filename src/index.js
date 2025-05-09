@@ -20,7 +20,8 @@ root.render(
             <Route path="/nuestraempresa" exact element={(<App idcontec={1} />)}/>
             <Route path="/servicios" exact element={(<App idcontec={2} />)}/>
             <Route path="/normaslegales" exact element={(<App idcontec={3} />)}/>
-            <Route path="/contacto" exact element={(<App idcontec={4} />)}/>
+            <Route path="/normaslegales/:idpost" exact element={(<App idcontec={4} />)}/>
+            <Route path="/contacto" exact element={(<App idcontec={5} />)}/>
         </Routes>
       </BrowserRouter>
     </NotificationProvider>

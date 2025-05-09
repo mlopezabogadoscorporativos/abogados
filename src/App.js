@@ -8,6 +8,7 @@ import Equipo from './equipo';
 import { RouterDesconocido } from './routerdesconocido/routerdesconocido';
 import Servicios from './servicios';
 import NormasLegales from './normasLegales';
+import ArticleNormasLegales from './articleNormasLegal';
 // import { useSEO } from './hooks/useSEO';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
@@ -18,6 +19,7 @@ function App(props) {
     <Equipo></Equipo>,
     <Servicios></Servicios>,
     <NormasLegales></NormasLegales>,
+    <ArticleNormasLegales></ArticleNormasLegales>,
     <Contactos></Contactos>
   ]
 

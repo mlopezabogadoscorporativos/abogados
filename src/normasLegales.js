@@ -5,33 +5,29 @@ import './normasLegales.css';
 import { useEffect, useState } from 'react';
 import { getServisios } from './rotes_Api/servicios';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { getPostUser } from './rotes_Api/publicaciones';
 // import FormCorreoServices from './form_corre_send/formcorreosend';
 // https://www.youtube.com/watch?v=bhMUcU3LXHg
 
 function CardService(props) {
+  const {id, title, autor,date, imagen, actionMas} = props;
     return (
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg" />
-        <Card.Body>
-          <Card.Title>Card Title {props.id}</Card.Title>
-          <Card.Text className='normaLegal_item_text'>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          {/* <Button variant="primary">Go somewhere</Button> */}
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
+      <div className='normaLegal_item_text_container_principal' onClick={()=>{actionMas()}}>
+          <Card style={{ width: '18rem' }}>
+            <Card.Img className='normaLegal_item_image' variant="top" src={((imagen == "") || (imagen.indexOf(".jpg") == -1))?"https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg": imagen} />
+            <Card.Body>
+              <Card.Title>{title}</Card.Title>
+              <Card.Text className='normaLegal_item_text'>
+                {autor}
+              </Card.Text>
+              {/* <Button variant="primary">Go somewhere</Button> */}
+            </Card.Body>
+            <Card.Footer>
+              <small className="text-muted">{date.split("T")[0]}</small>
+            </Card.Footer>
+          </Card>
+          <div className='normaLegal_item_text_container_principal_item_id'>#&nbsp;{id}</div>
+      </div>
     );
 }
 
@@ -142,6 +138,55 @@ function NormasLegales() {
         {id: 47},
         {id: 48}
     ]);
+    const [dataNomasLegalesSearch, setDataNomasLegalesSearch] = useState([
+        {id: 1},
+        {id: 2},
+        {id: 3},
+        {id: 4},
+        {id: 5},
+        {id: 6},
+        {id: 7},
+        {id: 8},
+        {id: 9},
+        {id: 10},
+        {id: 11},
+        {id: 12},
+        {id: 13},
+        {id: 14},
+        {id: 15},
+        {id: 16},
+        {id: 17},
+        {id: 18},
+        {id: 19},
+        {id: 20},
+        {id: 21},
+        {id: 22},
+        {id: 23},
+        {id: 24},
+        {id: 26},
+        {id: 27},
+        {id: 28},
+        {id: 29},
+        {id: 30},
+        {id: 31},
+        {id: 32},
+        {id: 33},
+        {id: 34},
+        {id: 35},
+        {id: 36},
+        {id: 37},
+        {id: 38},
+        {id: 39},
+        {id: 40},
+        {id: 41},
+        {id: 42},
+        {id: 43},
+        {id: 44},
+        {id: 45},
+        {id: 46},
+        {id: 47},
+        {id: 48}
+    ]);
     const [dataNomasLegalesGroup, setdataNomasLegalesGroup] = useState([]);
     const [indexMostrar, setindexMostrar] = useState(0);
     const [indexPosition, setindexPosition] = useState(0);
@@ -156,19 +201,26 @@ function NormasLegales() {
 
     useEffect(() => {  
         // realizar un subindex
-        const data = dataNomasLegales;
-        const lenthFilter = Math.round(data.length / 12);
-        console.log(lenthFilter)
-        setindexMostrar(lenthFilter);
+        const dataPost = getPostUser().reverse();
+        setDataNomasLegales(dataPost);
+        setDataNomasLegalesSearch(dataPost);
+        // const data = dataNomasLegales;
+        // const lenthFilter = Math.round(dataPost.length / 12);
+        const lenthFilter = Math.round(dataPost.length / 12);
+        const modlenthFilter = dataPost.length % 12;
+        const idexFinal = (modlenthFilter > 0)? lenthFilter + 1 : lenthFilter
+        setindexMostrar(idexFinal);
         // recortar array
-        setdataNomasLegalesGroup(dataNomasLegales.filter((item,ind)=>{
+        setdataNomasLegalesGroup(dataPost.filter((item,ind)=>{
           return ind >= 0 && ind < 12
         }));
 
         return () => {}
     }, []);
 
-    const onChangeModal = (i) => {setStateModal(true); setkeyServicio(i);}
+    const onChangeModal = (i) => {
+      window.location.href = window.location.origin + "/normaslegales/" + i;
+    }
 
     const randomIntArrayInRange = (n = 1, min=1, max=1000) =>Array.from(
       { length: n },
@@ -177,6 +229,36 @@ function NormasLegales() {
 
     const recortNormasLegalisi = (indexP) => {
       setindexPosition(indexP);
+      setdataNomasLegalesGroup(dataNomasLegalesSearch.filter((item,ind)=>{
+        return ind >= (12 * (indexP - 1)) && ind < (12 * (indexP))
+      }));
+    }
+
+    const searchInformation = () => {
+      const indexP = 1;
+      const palabraSearch = document.getElementById("textsearchbusc").value;
+      const dataPost = dataNomasLegales.filter((item) => item.post_title.indexOf(palabraSearch) != -1);
+      // cambiar el numero de indices
+      const lenthFilter = Math.round(dataPost.length / 12);
+      const modlenthFilter = dataPost.length % 12;
+      const idexFinal = (modlenthFilter > 0)? lenthFilter + 1 : lenthFilter
+      setindexMostrar(idexFinal);
+      // realizar el refiltro
+      setDataNomasLegalesSearch(dataPost);
+      setdataNomasLegalesGroup(dataPost.filter((item,ind)=>{
+        return ind >= (12 * (indexP - 1)) && ind < (12 * (indexP))
+      }));
+    }
+
+    const resetInfomacion = () => {
+      const indexP = 1;
+      // cambiar el numero de indices
+      const lenthFilter = Math.round(dataNomasLegales.length / 12);
+      const modlenthFilter = dataNomasLegales.length % 12;
+      const idexFinal = (modlenthFilter > 0)? lenthFilter + 1 : lenthFilter
+      setindexMostrar(idexFinal);
+      // realizar el refiltro
+      setDataNomasLegalesSearch(dataNomasLegales);
       setdataNomasLegalesGroup(dataNomasLegales.filter((item,ind)=>{
         return ind >= (12 * (indexP - 1)) && ind < (12 * (indexP))
       }));
@@ -198,8 +280,12 @@ function NormasLegales() {
             </div>
             <div className='NomasLegales_carrousel_container_search'>
               <div className='NomasLegales_carrousel_container_search_filter'>
-                <Form.Control size="sm" type="text" placeholder="Small text" />
-                <div className='NomasLegales_carrousel_container_search_filter_button'>
+                <Form.Control id='textsearchbusc' type="text" placeholder="Buscar" onKeyUp = {()=>{
+                  if (document.getElementById("textsearchbusc").value == ""){
+                    resetInfomacion();
+                  }
+                }} />
+                <div className='NomasLegales_carrousel_container_search_filter_button' onClick={searchInformation}>
                   <i class="bi bi-search"></i>
                 </div>
               </div>
@@ -209,8 +295,12 @@ function NormasLegales() {
                 {
                     dataNomasLegalesGroup.map((item)=>{
                         return (<CardService 
-                          id = {item.id}
-                            actionMas = {()=>{onChangeModal(item.id);}}
+                            id = {item.ID}
+                            title = {item.post_title}
+                            autor = {item.post_author_name}
+                            date = {item.post_date}
+                            imagen = {item.guid}
+                            actionMas = {()=>{onChangeModal(item.ID);}}
                         />);
                     })
                 }
@@ -220,11 +310,11 @@ function NormasLegales() {
               <div className='NomasLegales_carrousel_container_opccion_filter'>
                 <ButtonToolbar aria-label="Toolbar with button groups">
                   <ButtonGroup className="me-2" aria-label="First group">
-                    {randomIntArrayInRange(indexMostrar).map((item, ind)=>{
+                    {(indexMostrar > 1)?randomIntArrayInRange(indexMostrar).map((item, ind)=>{
                       if(ind == 0) return <Button onClick={()=>{recortNormasLegalisi(ind + 1)}} className='NomasLegales_carrousel_container_opccion_filter_button NomasLegales_carrousel_container_opccion_filter_button_roudR'>{ind + 1}</Button>
                       if(ind == indexMostrar - 1) return <Button onClick={()=>{recortNormasLegalisi(ind + 1)}} className='NomasLegales_carrousel_container_opccion_filter_button NomasLegales_carrousel_container_opccion_filter_button_roudL'>{ind + 1}</Button>
                       return <Button onClick={()=>{recortNormasLegalisi(ind + 1)}} className='NomasLegales_carrousel_container_opccion_filter_button'>{ind + 1}</Button>
-                    })}
+                    }):<></>}
                   </ButtonGroup>
                 </ButtonToolbar>
               </div>
