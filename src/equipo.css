@@ -26,11 +26,13 @@
 
 .equipo_action_opcion{
     color: var(--color-primary-empresarial) !important;
+    font-weight: 600 !important;
 }
 
 .equipo_action_opcion.nav-link.active{
     color: white !important;
     background-color: var(--color-primary-empresarial) !important;
+    font-weight: 600 !important;
 }
 
 .equipo_info_justificado{

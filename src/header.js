@@ -4,24 +4,25 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import iconEmpresa from './img/iconEmpresaLine2.png'
+import iconEmpresa from './img/iconEmpresaLine3.png'
+import iconEmpresaShort from './img/iconEmpresaLine4.png'
 import "./header.css"
 import { useSEO } from './hooks/useSEO';
 import { useEffect, useState } from 'react';
 import { Seo_list } from './hooks/seolistroutes';
 
 function Header() {
-
+  const [width, setWidth] = useState(window.innerWidth);
   const [position, setPosition] = useState(0);
   const listUrl = [
     "/home",
     "/nuestraempresa",
     "/servicios",
+    "/normaslegales",
     "/contacto"
   ];
 
   useEffect(()=>{
-    console.log(window.location.origin)
     // se captura el patch de la url : (http://)origin/(patch)
     const urlPathech = window.location.href.replace(window.location.origin, "").split("/")
     // substrae todos los patch de la url
@@ -33,6 +34,12 @@ function Header() {
     }, [0])
     setPosition(index)
   },[position])
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useSEO(Seo_list[position]);
 
@@ -47,9 +54,8 @@ function Header() {
         <Navbar.Brand href="#">
           <img
             className='iconContainerAccionImage'
-            // style={{}} 
-            src={iconEmpresa}
-            alt="Logo de HTML5" 
+            src={(width > 720)?iconEmpresa:iconEmpresaShort}
+            alt="Logo de Empresa mlopez" 
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -59,7 +65,6 @@ function Header() {
         >
           <Nav
             className="me-auto my-2 my-lg-0"
-            // style={{  maxHeight: '100px', backgroundColor:"red" }}
             navbarScroll
           >
             <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(0)}}>Inicio</Nav.Link>
@@ -67,15 +72,19 @@ function Header() {
             <Nav.Link className='navitemusert' href="" onClick={()=>{redireccion(2)}}>Servicios</Nav.Link>
             <NavDropdown className='navitemusert_drop' title="Novedades" id="navbarScrollingDropdown">
               {/* <NavDropdown.Item href="">Action</NavDropdown.Item> */}
-              <NavDropdown.Item className='navitemusert'  href="">
-                NormasLegales
+              {/* <NavDropdown.Item className='navitemusert' onClick={()=>{redireccion(3)}} href="">
+                Noticias Politicas
+              </NavDropdown.Item>
+              <NavDropdown.Divider /> */}
+              <NavDropdown.Item className='navitemusert' onClick={()=>{redireccion(3)}} href="">
+                Normas Legales
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item className='navitemusert'  href="">
                 Politica
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className='navitemusert' onClick={()=>{redireccion(3)}} href="">Contactos</Nav.Link>
+            <Nav.Link className='navitemusert' onClick={()=>{redireccion(4)}} href="">Contactos</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

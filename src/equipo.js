@@ -1,4 +1,4 @@
-import { Carousel, Col, Nav, Row, Tab } from 'react-bootstrap';
+import { Carousel, Col, ListGroup, Nav, Row, Tab } from 'react-bootstrap';
 import './equipo.css';
 import trasparent from './img/imagenTrasparente.png';
 import trasparentH from './img/trasparenteHorizontal.png';
@@ -124,7 +124,18 @@ function Equipo() {
                                     <Tab.Pane className='equipo_info_justificado' eventKey="terty">
                                         Nuestro objetivo institucional es brindar soluciones integrales y de excelencia en los campos del derecho, la salud, la educación y la comunicación digital, articulando nuestras acciones desde un enfoque ético, humano y social. Buscamos generar un impacto positivo en la vida de las personas, especialmente en los sectores más vulnerables, promoviendo el acceso a servicios legales responsables, atención médica oportuna, formación educativa de calidad y contenidos comunicacionales que fortalezcan la ciudadanía crítica y participativa. Trabajamos de manera multidisciplinaria para responder con eficiencia y compromiso a las necesidades reales de la comunidad, consolidándonos como un referente regional que contribuye activamente al desarrollo sostenible, la justicia social y el bienestar colectivo.
                                     </Tab.Pane>
-                                    <Tab.Pane className='equipo_info_justificado' eventKey="cuarto">Second tab content</Tab.Pane>
+                                    <Tab.Pane className='equipo_info_justificado' eventKey="cuarto">
+                                    <ListGroup>
+                                        <ListGroup.Item>Ética</ListGroup.Item>
+                                        <ListGroup.Item>Compromiso social</ListGroup.Item>
+                                        <ListGroup.Item>Excelencia</ListGroup.Item>
+                                        <ListGroup.Item>Transparencia</ListGroup.Item>
+                                        <ListGroup.Item>Humanismo</ListGroup.Item>
+                                        <ListGroup.Item>Multidisciplinariedad</ListGroup.Item>
+                                        <ListGroup.Item>Confidencialidad</ListGroup.Item>
+                                        <ListGroup.Item>Empatía</ListGroup.Item>
+                                    </ListGroup>
+                                    </Tab.Pane>
                                 </Tab.Content>
                                 </Col>
                             </Row>

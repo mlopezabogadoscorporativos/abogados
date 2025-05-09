@@ -126,19 +126,6 @@ function Servicios() {
                 <h5 className='subTitle'>Nuestros Servicios</h5>
                 <h3 className='titleExtense'>Conozcan que les ofrecemos</h3>
             </div>
-            {/* <div style={{height: "50px"}}></div> */}
-            {/* <div className='servicios_carrousel_container_person'>
-                {
-                    dataServicios.map((item)=>{
-                        return (<CardService 
-                            icon = {item.icon}
-                            title = {item.title}
-                            descripccionBrev = {item.descripccionBrev}
-                            actionMas = {()=>{onChangeModal(item.id);}}
-                        />);
-                    })
-                }
-            </div> */}
             <div className='servicios_carrousel_container'>
                 <div className='servicio_diseno_conteinerFlotant'></div>
                 {(width > 720)?

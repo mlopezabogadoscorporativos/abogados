@@ -15,7 +15,9 @@
 
 .iconContainerAccionImage{
     width: 250px; 
-    height: 95px;
+    height: 65px;
+    margin-top: 30px;
+    margin-left: 20px;
 }
 
 .contenedor_nav_center > a{
@@ -72,8 +74,10 @@
     }
 
     .iconContainerAccionImage{
-        width: 150px;
+        width: 50px;
         height: 50px;
+        margin-top: 0px;
+        margin-left: 0px;
     }
 }
   

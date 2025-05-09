@@ -7,6 +7,7 @@ import Home from './home';
 import Equipo from './equipo';
 import { RouterDesconocido } from './routerdesconocido/routerdesconocido';
 import Servicios from './servicios';
+import NormasLegales from './normasLegales';
 // import { useSEO } from './hooks/useSEO';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
@@ -16,6 +17,7 @@ function App(props) {
     <Home></Home>,
     <Equipo></Equipo>,
     <Servicios></Servicios>,
+    <NormasLegales></NormasLegales>,
     <Contactos></Contactos>
   ]
 

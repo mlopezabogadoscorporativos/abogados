@@ -1,0 +1,58 @@
+<div className='NomasLegales_carrousel_container'>
+                <div className='servicio_diseno_conteinerFlotant'></div>
+                {(width > 720)?
+                <Carousel className='upbutton'>
+                    {Object.keys(dataNomasLegalesGroup).map((item)=>{
+                    return (
+                    <Carousel.Item>
+                        {/* <div className='boxShadow'></div> */}
+                        <img
+                        className="d-block w-100"
+                        src={trasparent}
+                        alt="Image One"
+                        style={{objectFit:"cover"}}
+                        />
+                        <Carousel.Caption className='box'>
+                        <div className='servicio_contenedor_subIten_carrousel'>
+                            {dataNomasLegalesGroup[item].map((itemCard,ind)=>{
+                            return (<>
+                                <CardService 
+                                    nombre= {itemCard.title} 
+                                    icon={itemCard.icon}
+                                    actionMas = {()=>{onChangeModal(itemCard.id);}}
+                                />
+                                {(ind == (dataNomasLegalesGroup[item].length - 1))?<></>:<div style={{width: "40px"}}></div>}
+                            </>)
+                            })}
+                        </div>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    );
+                })}
+                {/* ------------------------------------------------------------------------------------ */}
+                </Carousel>: <Carousel className='upbutton'>
+                {/* ------------------------------------------------------------------------------------ */}
+                {dataNomasLegales.map((item)=>{
+                    return (
+                    <Carousel.Item>
+                        {/* <div className='boxShadow'></div> */}
+                        <img
+                        className="d-block w-100"
+                        src={trasparentH}
+                        alt="Image One"
+                        style={{objectFit:"cover"}}
+                        />
+                        <Carousel.Caption className='box'>
+                        <div className='servicio_contenedor_subIten_carrousel'>
+                            <CardService 
+                            nombre= {item.title} 
+                            icon={item.icon}
+                            />
+                        </div>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    );
+                })}
+                {/* ------------------------------------------------------------------------------------ */}
+                </Carousel>}
+            </div>

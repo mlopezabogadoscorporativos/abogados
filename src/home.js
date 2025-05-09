@@ -1,13 +1,13 @@
 import Carousel from 'react-bootstrap/Carousel';
-import car1 from './img/carousel-1.jpg';
-import car2 from './img/carousel-2.jpg';
+// import car1 from './img/carousel-1.jpg';
+// import car2 from './img/carousel-2.jpg';
 import trasparent from './img/imagenTrasparente.png';
 import trasparentH from './img/trasparenteHorizontal.png';
-import Form from 'react-bootstrap/Form';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
+// import Container from 'react-bootstrap/Container';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Button from 'react-bootstrap/Button';
 import "bootstrap-icons/font/bootstrap-icons.css";
 import React, { useState, useEffect } from "react";
 // import DatePicker from '../src/DatePicket';
@@ -103,8 +103,8 @@ function Home() {
             {/* <div className='boxShadow'></div> */}
             <div className='home_presentation_image'></div>
             <Carousel.Caption className='box'>
-              <h3 className='home_presentation_title'>Bienvenidos a nuestra empresa MLOPEZ ABOGADOS sac</h3>
-              <p className='home_presentation_subtitle'>Con 10 años de trayectoria, orintada a lograr satisfacer la nesecidad del cliente.</p>
+              <h3 className='home_presentation_title'>Bienvenidos a nuestro corporativo MLOPEZ sac</h3>
+              <p className='home_presentation_subtitle'>¡Saber en derecho, razón en justicia!.</p>
               <a className='home_presentation_button' href='#servicios'>Nuestros Servicios</a>
             </Carousel.Caption>
           </Carousel.Item>
@@ -119,19 +119,18 @@ function Home() {
           </Carousel.Item>
         </Carousel>
         {/* informacion de la empresa */}
-        <div className='home_containerConten phonehomeredimencion'>
+        <div className='home_containerConten home_phonehomeredimencion'>
           <div className='home_contenido_centrado'> 
             <div className='home_contenido_centrado_images'>
               <div className='home_contenido_centrado_images_img'></div>
             </div>
             <div className='home_contenido_centrado_infoButton'>
-              <h5 className='subTitle'>Learn About Us</h5>
+              <h5 className='subTitle'>conocenos</h5>
               <h3 className='titleExtense'>Brindamos servicios legales confiables y efectivos</h3>
               <h6 className='contenido_text'>
-                Nuestra empresa CORPORATIVO MLOPEZ S.A.C, es una persona jurídica de derecho 
-                privado, promotora del Estudio Jurídico « MLÓPEZ ABOGADOS – ASESORES & CONSULTORES 
-                » Cuyo objeto social, es la prestación de servicios de asesoría legal y defensa 
-                técnica material, en asuntos empresariales, comerciales, tributarios, laborales.
+                Bienvenidos a nuestro Corporativo MLopez SAC, una empresa líder comprometida con brindar soluciones integrales en derecho, salud, educación y comunicación digital, impulsando el progreso y la transformación positiva de la sociedad peruana.
+                Nuestro compromiso es ser referentes en servicios legales de alta calidad y responsabilidad social; en salud y educación, acercando atención médica, campañas preventivas y formación accesible; y en comunicación, liderando con HTVPerú la difusión de contenidos informativos que fomenten una ciudadanía activa y crítica.
+                Nos guía la misión de consolidarnos como una empresa modelo en la región Piura y el país, destacándonos por nuestra ética, responsabilidad y el impacto social positivo en cada una de nuestras áreas de acción.
               </h6>
             </div>
           </div>
@@ -158,9 +157,8 @@ function Home() {
               {/* <h5 className='subTitle'>Nuestros Servicios</h5> */}
               <h3 className='titleExtense'>Nuestros Servicios</h3>
               <h6 className='contenido_text' style={{maxWidth: "90%"}}>
-                Brindamos asesoramiento integral en el desarrollo de habilitaciones urbanas.
-                Aseguramos que cada proyecto cumpla con la normativa vigente.
-                Gestionamos permisos, licencias y trámites administrativos.
+                En Firma Legal - MLópez & Abogados Asesores, defendemos tus derechos con ética y profesionalismo. Contamos con especialistas en asesoría empresarial y defensa técnica material, protegiendo lo que más te importa: tus derechos. ¡Saber en derecho, razón en justicia!
+                Además, a través de HTVPerú, nuestro canal en vivo, ofrecemos contenidos informativos y de entretenimiento de calidad, conectando a la comunidad peruana con noticias, cultura y eventos relevantes, promoviendo una ciudadanía activa y bien informada.
               </h6>
           </div>
           <div className='home_carrousel_container'>
@@ -290,45 +288,6 @@ function Home() {
         <div style={{height: "40px"}}></div>
         {/* contactarse con la empresa */}
         <FormCorreoServices />
-        {/* <div className='home_containerConten_C'>
-          <div className='home_form_image_degrade'>
-            <div className='home_form_container_mail'>
-               <h3>
-               Obtenga una cita
-               </h3>
-               <Container>
-                <Row>
-                 <Col><Form.Control type="text" placeholder="Nombre" /></Col>
-                </Row>
-                <div style={{height:"10px"}}></div>
-                <Row>
-                 <Col><Form.Control type="text" placeholder="Correo" /></Col>
-                </Row>
-                <div style={{height:"10px"}}></div>
-                <Row>
-                 <Col>
-                  <Form.Select aria-label="Default select example">
-                    <option>Selecciona el Servicio</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </Form.Select>
-                 </Col>
-                </Row>
-                <div style={{height:"10px"}}></div>
-                <Row>
-                 <Col><Form.Control as="textarea" aria-label="With textarea" /></Col>
-                </Row>
-                <div style={{height:"10px"}}></div>
-                <Row>
-                 <Col><Button className='boton_envio_email' >Enviar</Button></Col>
-                </Row>
-                <div style={{height:"10px"}}></div>
-              </Container>
-
-            </div>
-          </div>
-        </div> */}
       </>
   );
 }

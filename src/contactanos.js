@@ -2,6 +2,7 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 import './contactanos.css';
 import { useCallback, useState } from 'react';
+import FormCorreoContacto from './form_corre_send/formcorreosend2';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 // https://www.youtube.com/watch?v=bhMUcU3LXHg
   
@@ -63,29 +64,10 @@ function Contactos() {
         </div>
         <div className='contact_containerConten' >
             <div className='contact_infoTitle_container_Contac'>
-                <h5 className='contact_subTitle'>Contact Us</h5>
-                <h3 className='contact_titleExtense'>Contact For Any Query</h3>
+                <h5 className='contact_subTitle'>Contactanos</h5>
+                <h3 className='contact_titleExtense'>Agende su cita</h3>
                 <div className='contact_container_form_iframe'>
-                    <div className='contact_container_form'>
-                        <Container>
-                            <Row>
-                                <Col><Form.Control type="text" placeholder="Nombre" /></Col>
-                            </Row>
-                            <div style={{height:"10px"}}></div>
-                            <Row>
-                                <Col><Form.Control type="text" placeholder="Correo" /></Col>
-                            </Row>
-                            <div style={{height:"10px"}}></div>
-                            <Row>
-                                <Col><Form.Control style={{height: "150px"}} as="textarea" aria-label="With textarea" placeholder='Descripccion' /></Col>
-                            </Row>
-                            <div style={{height:"10px"}}></div>
-                            <Row>
-                                <Col><Button className='boton_envio_email' >Primary</Button></Col>
-                            </Row>
-                            <div style={{height:"10px"}}></div>
-                        </Container>
-                    </div>
+                    <FormCorreoContacto></FormCorreoContacto>
                     <div className='contact_container_iframe'>
                         <MapaGoogle></MapaGoogle>
                     </div>

@@ -3,6 +3,8 @@ import "./formcorreosend.css";
 import { useEffect, useRef, useState } from "react";
 import { getServisios } from "../rotes_Api/servicios";
 import emailjs from '@emailjs/browser';
+import { useNotification } from "../Notifications/NotificationProvider";
+import { handleNewNotification } from "../Notifications/useNotificacion";
 
 function FormCorreoServices(props) {
 
@@ -10,6 +12,7 @@ function FormCorreoServices(props) {
     const [dataServicios, setDataServicios] = useState([
         {id: 8, icon: "bi bi-percent", title: "Ejecución de garantías",descripccionBrev: ""},
     ]);
+    const dispatch = useNotification();
 
     useEffect(() => {
         const data = getServisios();
@@ -34,13 +37,24 @@ function FormCorreoServices(props) {
         })
         .then(
             () => {
-            console.log('SUCCESS!');
+                handleNewNotification(dispatch,'Se agendo la cita correctamente !.', 200);
+                limpiarCasillas();
             },
             (error) => {
-            console.log('FAILED...', error.text);
+                handleNewNotification(dispatch,'Sucedio un error al enviar el correo.', 404);
+                limpiarCasillas();
             },
         )
     }
+
+    const limpiarCasillas = () => {
+        document.getElementById("textnombre").value = "";
+        document.getElementById("textcorreo").value = "";
+        document.getElementById("textdescripccion").value = "";
+        document.getElementById("selectFormu").value = "0";
+    }
+
+
   
     return (
         <>
@@ -63,7 +77,7 @@ function FormCorreoServices(props) {
                                 <Row>
                                     <Col>
                                         <Form.Select id="selectFormu" aria-label="Default select example">
-                                            <option>Selecciona el Servicio</option>
+                                            <option value="0" >Selecciona el Servicio</option>
                                             {dataServicios.map((item)=>{
                                                 return <option value={item.id}>{item.title}</option>
                                             })}

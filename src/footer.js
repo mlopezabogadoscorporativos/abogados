@@ -1,28 +1,31 @@
 import './footer.css';
-// import Header from './header';
-// import Home from './home';
-// import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope,faHome,faPhone } from '@fortawesome/free-solid-svg-icons'
 import "bootstrap-icons/font/bootstrap-icons.css";
-// import { faCat } from '@awesome.me/kit-KIT_CODE/icons/sharp/solid'
-// import { faDog } from '@awesome.me/kit-KIT_CODE/icons/duotone/solid'
-// import { faDragon } from '@awesome.me/kit-KIT_CODE/icons/sharp-duotone/solid'
 
 
 function Footer() {
-  return (
+
+   const onRedirection = (url) => {
+      var win = window.open(url, '_blank');
+      win.focus();
+   }
+
+   return (
       <>
         <div className='footer_conteiner_page'>
            <div className='footer_container_redesSocial'>
-              <div className='footer_item_redSocial'>
+              <div className='footer_item_redSocial' onClick={()=>{onRedirection("")}}>
                  <i class="bi bi-facebook"></i>
               </div>
-              <div className='footer_item_redSocial'>
+              <div className='footer_item_redSocial' onClick={()=>{onRedirection("https://www.youtube.com/@mlabogadosasesoresyconsultores?sttick=0")}}>
                  <i class="bi bi-youtube"></i>
               </div>
-              <div className='footer_item_redSocial'>
+              <div className='footer_item_redSocial' onClick={()=>{onRedirection("https://www.instagram.com/mlopez.abogados/")}}>
                  <i class="bi bi-instagram"></i>
+              </div>
+              <div className='footer_item_redSocial' onClick={()=>{onRedirection("https://www.linkedin.com/in/ml%C3%B3pez-abogdaos-asesores-y-consultores-19b88529a/")}}>
+              <i class="bi bi-linkedin"></i>
               </div>
            </div>
            <div className='footer_container_contact'>
