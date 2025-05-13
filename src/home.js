@@ -15,6 +15,7 @@ import './home.css';
 import { getServisios } from './rotes_Api/servicios';
 import FormCorreoServices from './form_corre_send/formcorreosend';
 import { getEquipos } from './rotes_Api/equipo';
+// import imagen from './img/iamgencorpo.jpeg'
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function CardService(props) {
@@ -122,7 +123,7 @@ function Home() {
         <div className='home_containerConten home_phonehomeredimencion'>
           <div className='home_contenido_centrado'> 
             <div className='home_contenido_centrado_images'>
-              <div className='home_contenido_centrado_images_img'></div>
+              <div className='home_contenido_centrado_images_img' ></div>
             </div>
             <div className='home_contenido_centrado_infoButton'>
               <h5 className='subTitle'>conocenos</h5>
