@@ -61,7 +61,7 @@ function Footer() {
            <div className='footer_container_copyraid'>
              <div className='footer_subcontainer_copyraid'>
                  <p className='footer_text_copyraid'>© <b>Your Site Name.</b> All Rights Reserved.</p>
-                 <p className='footer_text_copyraid'>Designed by <b>HTML Codex</b></p>
+                 <p className='footer_text_copyraid'>ruc: <b>000000000</b></p>
              </div>
            </div>
         </div>
